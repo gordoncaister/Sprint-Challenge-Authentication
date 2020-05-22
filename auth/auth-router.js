@@ -16,10 +16,8 @@ router.post('/register', (req, res) => {
     if (isValid(userDetails)){
         const rounds = process.env.BCRYPT_ROUNDS || 4;
         userDetails.password = bcryptjs.hashSync(userDetails.password, rounds);
-        console.log(userDetails)
         Auth.add(userDetails)
             .then(user=>{
-                console.log("user", user)
                 res.status(201).json(user)
             })
             .catch(err => {

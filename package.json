@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "cross-env DB_ENV=testing jest --watch --coverage runInBand",
+    "test": "cross-env DBASE_ENV=testing jest --watchAll runInBand",
     "server": "nodemon index.js"
   },
   "jest": {
