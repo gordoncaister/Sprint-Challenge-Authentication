@@ -35,7 +35,7 @@ describe("Post Login",()=> {
         expect(find.status).toEqual(200)
         expect(find.body).toHaveProperty("token")
     })
-    it("Should return 200, should have token", async() => {
+    it("should have token", async() => {
         const find = await request(server)
         .post("/api/auth/login")
         .send({username:"gord",password:"gord"})
@@ -45,7 +45,7 @@ describe("Post Login",()=> {
 })
 
 describe("get jokes", () => {
-    it("should return 200.", async()=>{
+    it("should return 200.", async() => {
         const jokes = await request(server)
         .get("/api/jokes")
         .set({authorization: token})
@@ -53,7 +53,7 @@ describe("get jokes", () => {
         expect(jokes.body[2]).toMatchObject({"joke": "Why didn’t the skeleton cross the road? Because he had no guts."})
         
     })
-    it("should return 200.", async()=>{
+    it("should have a specific jokes.", async () => {
         const jokes = await request(server)
         .get("/api/jokes")
         .set({authorization: token})
