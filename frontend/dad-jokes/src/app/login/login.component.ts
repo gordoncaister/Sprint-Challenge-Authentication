@@ -25,13 +25,14 @@ export class LoginComponent implements OnInit {
 
     this.loginService.post({username:this.username,password:this.password})
       .subscribe( (response: Response) => {
+        response.token
         console.log(response.token)
         localStorage.setItem("authorization", response.token)
 
       })
       
     }
-  
+   
   
 
 }

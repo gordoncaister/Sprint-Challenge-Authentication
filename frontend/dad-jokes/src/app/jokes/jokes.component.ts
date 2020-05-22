@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JokesService } from "./jokes.service"
 
 @Component({
   selector: 'app-jokes',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jokes.component.scss']
 })
 export class JokesComponent implements OnInit {
-
-  constructor() { }
+  jokes
+  constructor(private jokesService:JokesService) { }
 
   ngOnInit(): void {
+    this.getJokes()
   }
-
+ 
+  getJokes(){
+    this.jokesService.getAll()
+  }
 }

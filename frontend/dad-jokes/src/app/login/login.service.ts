@@ -11,8 +11,8 @@ export class LoginService {
 
   getUrl() { return `${this.BASE_URL}${this.model}`}
 
-  post(details){
-    return this.http.post(this.getUrl(),details)
+  post(userCredentials){
+    return this.http.post(this.getUrl(),userCredentials)
   }
 
 }
