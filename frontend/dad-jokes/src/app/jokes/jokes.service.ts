@@ -13,6 +13,6 @@ export class JokesService {
     console.log("getting Jokes")
     const headers = new HttpHeaders().set("authorization",localStorage.getItem("authorization"))
     console.log(headers)
-    return this.http.get(this.BASE_URL,{headers}).subscribe(response => console.log("respnse",response))
+    return this.http.get(this.BASE_URL,{headers})
   }
 }

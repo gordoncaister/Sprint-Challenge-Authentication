@@ -15,6 +15,6 @@ export class JokesComponent implements OnInit {
   }
  
   getJokes(){
-    this.jokes = this.jokesService.getAll()
+    this.jokesService.getAll().subscribe(jokes => this.jokes=jokes)
   }
 }
